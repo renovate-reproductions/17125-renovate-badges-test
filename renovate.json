@@ -4,15 +4,5 @@
         "config:base",
         ":disableRateLimiting",
         "github>whitesource/merge-confidence:beta"
-    ],
-    "prBodyColumns": [
-        "Package",
-        "Change",
-        "Type",
-        "Package file",
-        "Age",
-        "Adoption",
-        "Passing",
-        "Confidence"
     ]
 }
