@@ -5,41 +5,20 @@
         ":disableRateLimiting",
         "github>whitesource/merge-confidence:beta"
     ],
-    "packageRules": [
-        {
-            "description": "Add 'Package file' columns to merge confidence supported packages - see https://github.com/whitesource/merge-confidence/blob/main/beta.json for original configuration",
-            "matchDatasources": [
-                "maven",
-                "npm",
-                "pypi"
-            ],
-            "matchUpdateTypes": [
-                "patch",
-                "minor",
-                "major"
-            ],
-            "prBodyColumns": [
-                "Package",
-                "Change",
-                "Type",
-                "Package file",
-                "Age",
-                "Adoption",
-                "Passing",
-                "Confidence"
-            ]
-        },
-        {
-            "description": "Add 'Package file' columns to pin updates",
-            "matchUpdateTypes": [
-                "pin"
-            ],
-            "prBodyColumns": [
-                "Package",
-                "Change",
-                "Type",
-                "Package file"
-            ]
-        }
+    "prBodyDefinitions": {
+        "Age": "[![age](https://badges.renovateapi.com/packages/{{datasource}}/{{replace '/' '%2f' depName}}/{{{toVersion}}}/age-slim)](https://docs.renovatebot.com/merge-confidence/)",
+        "Adoption": "[![adoption](https://badges.renovateapi.com/packages/{{datasource}}/{{replace '/' '%2f' depName}}/{{{toVersion}}}/adoption-slim)](https://docs.renovatebot.com/merge-confidence/)",
+        "Passing": "[![passing](https://badges.renovateapi.com/packages/{{datasource}}/{{replace '/' '%2f' depName}}/{{{toVersion}}}/compatibility-slim/{{{fromVersion}}})](https://docs.renovatebot.com/merge-confidence/)",
+        "Confidence": "[![confidence](https://badges.renovateapi.com/packages/{{datasource}}/{{replace '/' '%2f' depName}}/{{{toVersion}}}/confidence-slim/{{{fromVersion}}})](https://docs.renovatebot.com/merge-confidence/)"
+    },
+    "prBodyColumns": [
+        "Package",
+        "Change",
+        "Type",
+        "Package file",
+        "Age",
+        "Adoption",
+        "Passing",
+        "Confidence"
     ]
 }
