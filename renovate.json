@@ -4,5 +4,44 @@
         "config:base",
         ":disableRateLimiting",
         "github>whitesource/merge-confidence:beta"
+    ],
+    "packageRules": [
+        {
+            "description": "Add 'Package file' columns to merge confidence supported packages - see https://github.com/whitesource/merge-confidence/blob/main/beta.json for original configuration",
+            "matchDatasources": [
+                "maven",
+                "npm",
+                "pypi"
+            ],
+            "matchUpdateTypes": [
+                "patch",
+                "minor",
+                "major"
+            ],
+            "prBodyColumns": [
+                "Package",
+                "Change",
+                "Update",
+                "Type",
+                "Package file",
+                "Age",
+                "Adoption",
+                "Passing",
+                "Confidence"
+            ]
+        },
+        {
+            "description": "Add 'Package file' columns to pin updates",
+            "matchUpdateTypes": [
+                "pin"
+            ],
+            "prBodyColumns": [
+                "Package",
+                "Change",
+                "Update",
+                "Type",
+                "Package file"
+            ]
+        }
     ]
 }
