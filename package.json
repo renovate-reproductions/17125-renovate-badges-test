@@ -1,0 +1,6 @@
+{
+    "name": "renovate-badges-test",
+    "dependencies": {
+        "dotenv": "^15.0.0"
+    }
+}
