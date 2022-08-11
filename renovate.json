@@ -4,5 +4,12 @@
         "config:base",
         ":disableRateLimiting",
         "github>whitesource/merge-confidence:beta"
+    ],
+    "prBodyColumns": [
+        "Package",
+        "Change",
+        "Type",
+        "Update",
+        "Confidence"
     ]
 }
